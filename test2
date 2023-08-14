@@ -1,0 +1,11 @@
+struct book
+{
+	char name[10];
+	int price;
+};
+int main()
+{
+	struct book s1 = { "wei",30 };
+	struct book* s2 = &s1
+	printf("%s %d\n", s1.name, s1.price);
+	printf("%s %d", s2->name, s2->price);
