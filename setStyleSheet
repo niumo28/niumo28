@@ -1,0 +1,26 @@
+ connect(misc_button,
+            &QPushButton::clicked,
+            this,
+            &Finddialog::send_misc_clicked);
+ 
+    connect(this,
+        SIGNAL(misc_clicked(const QString&)),
+        this,
+        SLOT(misc_change(const QString&)));
+ 
+}
+ 
+//QMessageBox
+void Finddialog::shutdown_window()
+{
+    info_box = new QMessageBox();
+    info_box->setWindowTitle(tr("w"));
+    info_box->setText(tr("."));
+    QPushButton* btn_sure = info_box->addButton( QMessageBox::AcceptRole);
+    QPushButton* bun_cancel = info_box->addButton( QMessageBox::RejectRole);
+    info_box->setStyleSheet("background-color:white");
+    if (!info_box->exec())
+    {
+        this->close();
+    }
+}
